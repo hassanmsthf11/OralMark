@@ -40,5 +40,6 @@ Grading oral exams in real-time is stressful. You have to listen, ask questions,
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
-*Created by [Your Name]*
+*Created by Hassan Musthafa*
+
 
