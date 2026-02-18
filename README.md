@@ -3,7 +3,7 @@
 > **A lightning-fast, keyboard-first tool for grading oral exams efficiently.**
 
 ![Demo](demo.gif)
-*(Add your demo.gif here)*
+
 
 ## 🚀 Overview
 
@@ -41,3 +41,4 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
 *Created by [Your Name]*
+
