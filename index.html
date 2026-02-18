@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,130 +7,129 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <div id="app">
+<div id="app">
 
-        <!-- ── SETUP PANEL ── -->
-        <div id="setup-panel" class="panel">
+    <!-- ── SETUP PANEL ── -->
+    <div id="setup-panel" class="panel">
 
-            <div class="app-brand">
-                <div class="brand-icon">✦</div>
-                <div class="brand-text">
-                    <div class="brand-title">OralMark</div>
-                    <div class="brand-sub">Assessment Suite</div>
-                </div>
-            </div>
-
-            <div class="setup-hero">
-                <h1>Configure Your<br><em>Marking Session</em></h1>
-                <p>Set up test sections and keyboard shortcuts before you begin.</p>
-            </div>
-
-            <!-- Exam Title -->
-            <div class="exam-title-row">
-                <label for="exam-title-input">Session Title</label>
-                <input type="text" id="exam-title-input" placeholder="e.g. Final Oral Exam – Term 3, 2024">
-            </div>
-
-            <!-- Two-column config -->
-            <div class="config-grid">
-                <section class="config-card">
-                    <div class="config-card-header">
-                        <div class="config-card-num">1</div>
-                        <h2>Test Sections</h2>
-                    </div>
-                    <div id="sections-list"></div>
-                    <button id="add-section-btn" class="btn ghost" style="margin-top:0.5rem;">+ Add Section</button>
-                </section>
-
-                <section class="config-card">
-                    <div class="config-card-header">
-                        <div class="config-card-num">2</div>
-                        <h2>Hotkeys &amp; Deductions</h2>
-                    </div>
-                    <div id="hotkeys-list"></div>
-                    <button id="add-hotkey-btn" class="btn ghost" style="margin-top:0.5rem;">+ Add Hotkey</button>
-                </section>
-            </div>
-
-            <div class="setup-footer">
-                <span class="hint">Data is saved automatically in your browser.</span>
-                <button id="start-btn" class="btn primary">Start Marking Session →</button>
+        <div class="app-brand">
+            <div class="brand-icon">✦</div>
+            <div class="brand-text">
+                <div class="brand-title">OralMark</div>
+                <div class="brand-sub">Assessment Suite</div>
             </div>
         </div>
 
-        <!-- ── MARKING PANEL ── -->
-        <div id="marking-panel" class="panel hidden">
-
-            <header class="marking-header">
-                <div class="header-left">
-                    <h1 id="session-title-display">Marking Session</h1>
-                    <span id="session-info"></span>
-                </div>
-                <div class="header-right">
-                    <button id="export-pdf-btn" class="btn secondary">↓ Export PDF</button>
-                    <button id="export-btn" class="btn secondary">↓ Export CSV</button>
-                    <button id="reset-btn" class="btn danger">⏹ End Session</button>
-                </div>
-            </header>
-
-            <!-- Live Stats Bar -->
-            <div class="stats-bar" id="stats-bar">
-                <div class="stat-item">
-                    <span class="stat-label">Students</span>
-                    <span class="stat-value neutral" id="stat-count">0</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Average</span>
-                    <span class="stat-value" id="stat-avg">—</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Highest</span>
-                    <span class="stat-value" id="stat-high">—</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Lowest</span>
-                    <span class="stat-value" id="stat-low">—</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-label">Max Possible</span>
-                    <span class="stat-value neutral" id="stat-max">—</span>
-                </div>
-            </div>
-
-            <div class="table-container">
-                <table id="marks-table">
-                    <thead>
-                        <tr id="table-header"></tr>
-                    </thead>
-                    <tbody id="table-body"></tbody>
-                </table>
-            </div>
-
-            <div id="hotkey-legend"></div>
+        <div class="setup-hero">
+            <h1>Configure Your<br><em>Marking Session</em></h1>
+            <p>Set up test sections and keyboard shortcuts before you begin.</p>
         </div>
 
-    </div>
+        <!-- Exam Title -->
+        <div class="exam-title-row">
+            <label for="exam-title-input">Session Title</label>
+            <input type="text" id="exam-title-input" placeholder="e.g. Final Oral Exam – Term 3, 2024">
+        </div>
 
-    <!-- ── MODAL ── -->
-    <div id="modal-overlay" class="hidden">
-        <div class="modal">
-            <h2 id="modal-title">Confirm Action</h2>
-            <p id="modal-message">Are you sure?</p>
-            <div class="modal-actions">
-                <button id="modal-cancel" class="btn secondary">Cancel</button>
-                <button id="modal-confirm" class="btn danger">Confirm</button>
-            </div>
+        <!-- Two-column config -->
+        <div class="config-grid">
+            <section class="config-card">
+                <div class="config-card-header">
+                    <div class="config-card-num">1</div>
+                    <h2>Test Sections</h2>
+                </div>
+                <div id="sections-list"></div>
+                <button id="add-section-btn" class="btn ghost" style="margin-top:0.5rem;">+ Add Section</button>
+            </section>
+
+            <section class="config-card">
+                <div class="config-card-header">
+                    <div class="config-card-num">2</div>
+                    <h2>Hotkeys &amp; Deductions</h2>
+                </div>
+                <div id="hotkeys-list"></div>
+                <button id="add-hotkey-btn" class="btn ghost" style="margin-top:0.5rem;">+ Add Hotkey</button>
+            </section>
+        </div>
+
+        <div class="setup-footer">
+            <span class="hint">Data is saved automatically in your browser.</span>
+            <button id="start-btn" class="btn primary">Start Marking Session →</button>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- ── MARKING PANEL ── -->
+    <div id="marking-panel" class="panel hidden">
+
+        <header class="marking-header">
+            <div class="header-left">
+                <h1 id="session-title-display">Marking Session</h1>
+                <span id="session-info"></span>
+            </div>
+            <div class="header-right">
+                <button id="export-pdf-btn" class="btn secondary">↓ Export PDF</button>
+                <button id="export-btn" class="btn secondary">↓ Export CSV</button>
+                <button id="reset-btn" class="btn danger">⏹ End Session</button>
+            </div>
+        </header>
+
+        <!-- Live Stats Bar -->
+        <div class="stats-bar" id="stats-bar">
+            <div class="stat-item">
+                <span class="stat-label">Students</span>
+                <span class="stat-value neutral" id="stat-count">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Average</span>
+                <span class="stat-value" id="stat-avg">—</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Highest</span>
+                <span class="stat-value" id="stat-high">—</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Lowest</span>
+                <span class="stat-value" id="stat-low">—</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Max Possible</span>
+                <span class="stat-value neutral" id="stat-max">—</span>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="marks-table">
+                <thead><tr id="table-header"></tr></thead>
+                <tbody id="table-body"></tbody>
+            </table>
+        </div>
+
+        <div id="hotkey-legend"></div>
+    </div>
+
+</div>
+
+<!-- ── MODAL ── -->
+<div id="modal-overlay" class="hidden">
+    <div class="modal">
+        <h2 id="modal-title">Confirm Action</h2>
+        <p id="modal-message">Are you sure?</p>
+        <div class="modal-actions">
+            <button id="modal-cancel" class="btn secondary">Cancel</button>
+            <button id="modal-confirm" class="btn danger">Confirm</button>
+        </div>
+    </div>
+</div>
+
+<a href="https://github.com/hassanmsthf11" target="_blank" rel="noopener noreferrer" id="watermark">
+    <span class="wm-icon">⌨</span>
+    <span>Created by <strong>Hassan Musthafa</strong></span>
+</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
-
 </html>
